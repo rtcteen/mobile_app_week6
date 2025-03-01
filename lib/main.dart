@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Traffic Light Animation',
+      title: 'Traffic Light ',
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),

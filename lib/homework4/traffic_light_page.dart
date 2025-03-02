@@ -12,7 +12,7 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
   int _currentLight = 0; // 0 = แดง, 1 = เหลือง, 2 = เขียว
   bool _isAutoMode = false; // โหมดอัตโนมัติ
   Timer? _timer;
-  int _countdown = 20; // เวลาถอยหลังก่อนเปลี่ยนไฟ
+  int _countdown = 10; // เวลาถอยหลังก่อนเปลี่ยนไฟ
 
   void _changeLight() {
     setState(() {
@@ -36,7 +36,7 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
 
   void _startAutoMode() {
     _timer?.cancel();
-    _countdown = 20;
+    _countdown = 10;
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_countdown > 1) {
         setState(() {
@@ -44,13 +44,13 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
         });
       } else {
         _changeLight();
-        _countdown = 20;
+        _countdown = 10;
       }
     });
   }
 
   void _resetCountdown() {
-    _countdown = 20;
+    _countdown = 10;
   }
 
   double _getOpacity(int lightIndex) {
@@ -159,7 +159,7 @@ class _TrafficLightPageState extends State<TrafficLightPage> {
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.amber,
+                    color: Colors.white,
                   ),
                 ),
               )
